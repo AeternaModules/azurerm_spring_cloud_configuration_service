@@ -7,7 +7,7 @@ resource "azurerm_spring_cloud_configuration_service" "spring_cloud_configuratio
   refresh_interval_in_seconds = each.value.refresh_interval_in_seconds
 
   dynamic "repository" {
-    for_each = each.value.repository != null ? [each.value.repository] : []
+    for_each = each.value.repository != null ? each.value.repository : []
     content {
       ca_certificate_id        = repository.value.ca_certificate_id
       host_key                 = repository.value.host_key

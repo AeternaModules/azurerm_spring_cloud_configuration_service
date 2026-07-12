@@ -27,7 +27,7 @@ EOT
     spring_cloud_service_id     = string
     generation                  = optional(string)
     refresh_interval_in_seconds = optional(number)
-    repository = optional(object({
+    repository = optional(list(object({
       ca_certificate_id        = optional(string)
       host_key                 = optional(string)
       host_key_algorithm       = optional(string)
@@ -40,7 +40,7 @@ EOT
       strict_host_key_checking = optional(bool)
       uri                      = string
       username                 = optional(string)
-    }))
+    })))
   }))
 }
 
